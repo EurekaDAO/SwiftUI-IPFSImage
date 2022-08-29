@@ -1,5 +1,7 @@
 # SwiftUI IPFSImage
 
+> :warning: **UNDER ACTIVE DEVELOPMENT - DO NOT USE YET**
+
 `IPFSImage` is `AsyncImage`, but with init options to load IPFS-based images and with cache capabilities. IPFSImage is based on the amazing work of [Lorenzo Fiamingo](https://github.com/lorenzofiamingo) with [CachedAsyncImage](https://github.com/lorenzofiamingo/swiftui-cached-async-image)
 
 ## Usage
