@@ -1,22 +1,21 @@
-# SwiftUI CachedAsyncImage 🗃️
+# SwiftUI IPFSImage
 
-`CachedAsyncImage` is `AsyncImage`, but with cache capabilities. 
-
+`IPFSImage` is `AsyncImage`, but with init options to load IPFS-based images and with cache capabilities. IPFSImage is based on the amazing work of [Lorenzo Fiamingo](https://github.com/lorenzofiamingo) with [CachedAsyncImage](https://github.com/lorenzofiamingo/swiftui-cached-async-image)
 
 ## Usage
 
-`CachedAsyncImage` has the exact same API and behavior as `AsyncImage`, so you just have to change this:
+To use IPFSImage simply import the package and use `IPFSImage` instead of `AsyncImage`.
+
 ```swift
-AsyncImage(url: logoURL)
-```
-to this:
-```swift
-CachedAsyncImage(url: logoURL)
+IPFSImage(cid: "Your IPFS Image CID/HASH")
 ```
 
-In addition to `AsyncImage` initializers, you have the possibilities to specify the cache you want to use (by default `URLCache.shared` is used), and to use `URLRequest` instead of `URL`:
+This will request a resizeable image from the specified IPFS cid/hash. IPFSImage also provides default loading and error states on top of AsyncImage. IPFSImage includes the same API and behavior as `AsyncImage`, so you can use any of the default AsyncImage initializers.
+
+In addition to AsyncImage initializers, you have the ability to specify the cache you want to use (by default `URLCache.shared` is used), and to use `URLRequest` instead of a cid:
+
 ```swift
-CachedAsyncImage(urlRequest: logoURLRequest, urlCache: .imageCache)
+IPFSImage(urlRequest: logoURLRequest, urlCache: .imageCache)
 ```
 
 ```swift
@@ -33,18 +32,5 @@ Remember when setting the cache the response (in this case our image) must be no
 ## Installation
 
 1. In Xcode, open your project and navigate to **File** → **Swift Packages** → **Add Package Dependency...**
-2. Paste the repository URL (`https://github.com/lorenzofiamingo/swiftui-cached-async-image`) and click **Next**.
+2. Paste the repository URL (`https://github.com/EurekaDAO/SwiftUI-IPFSImage`) and click **Next**.
 3. Click **Finish**.
-
-
-## Other projects
-
-[SwiftUI AsyncButton 🖲️](https://github.com/lorenzofiamingo/swiftui-async-button)
-
-[SwiftUI MapItemPicker 🗺️](https://github.com/lorenzofiamingo/swiftui-map-item-picker)
-
-[SwiftUI PhotosPicker 🌇](https://github.com/lorenzofiamingo/swiftui-photos-picker)
-
-[SwiftUI VerticalTabView 🔝](https://github.com/lorenzofiamingo/swiftui-vertical-tab-view)
-
-[SwiftUI SharedObject 🍱](https://github.com/lorenzofiamingo/swiftui-shared-object)

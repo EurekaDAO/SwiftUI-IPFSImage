@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swiftui-cached-async-image",
+    name: "ipfs-image",
     platforms: [
         .iOS(.v13),
         .macOS(.v10_15),
@@ -12,11 +12,11 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "CachedAsyncImage",
-            targets: ["CachedAsyncImage"])
+            name: "IPFSImage",
+            targets: ["IPFSImage"])
     ],
     targets: [
-        .target(name: "CachedAsyncImage")
+        .target(name: "IPFSImage")
     ]
 )
 

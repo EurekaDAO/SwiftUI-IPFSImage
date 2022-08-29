@@ -1,5 +1,7 @@
+//  IPFSImage.swift
+//  By BoiseITGuru @ Eureka DAO - 8/28/2022
 //
-//  Created by Lorenzo Fiamingo on 04/11/20.
+//  Based on CachedAsyncImage by Lorenzo Fiamingo
 //
 
 import SwiftUI
@@ -63,9 +65,11 @@ import SwiftUI
 ///     }
 ///
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-public struct CachedAsyncImage<Content>: View where Content: View {
+public struct IPFSImage<Content>: View where Content: View {
     
     @State private var phase: AsyncImagePhase
+    
+    private let cid: String
     
     private let urlRequest: URLRequest?
     
@@ -350,7 +354,7 @@ private extension AsyncImage {
 // MARK: - Helpers
 
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-private extension CachedAsyncImage {
+private extension IPFSImage {
     private func remoteImage(from request: URLRequest, session: URLSession) async throws -> (Image, URLSessionTaskMetrics) {
         let (data, _, metrics) = try await session.data(for: request)
         if metrics.redirectCount > 0, let lastResponse = metrics.transactionMetrics.last?.response {
